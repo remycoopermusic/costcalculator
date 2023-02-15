@@ -6,10 +6,21 @@
 //
 import SwiftUI
 
+struct Option: Hashable {
+    let title: String
+    let imageName: String
+}
+
 struct ContentView: View {
+    let options: [Option] = [
+        .init(title: "Home", imageName: "house"),
+        .init(title: "About", imageName: "info.circle"),
+        .init(title: "Settings", imageName: "gear"),
+    ]
+    
     var body: some View {
         NavigationView {
-            ListView()
+            ListView(options: options)
             
             MainView()
         }
@@ -18,8 +29,24 @@ struct ContentView: View {
 }
 
 struct ListView: View {
+    let options: [Option]
+    
     var body: some View {
-        Text("List")
+        VStack {
+            ForEach(options, id: \.self){ option in
+                HStack {
+                    Image(systemName: option.imageName)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 30)
+                    
+                    Text(option.title)
+                    
+                    Spacer()
+                }
+                .padding()
+            }
+        }
     }
 }
 
