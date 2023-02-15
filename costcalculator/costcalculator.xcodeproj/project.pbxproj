@@ -13,15 +13,22 @@
 		8B938202299D699800CB9C6E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9381F0299D699700CB9C6E /* ContentView.swift */; };
 		8B938203299D699800CB9C6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B9381F1299D699800CB9C6E /* Assets.xcassets */; };
 		8B938204299D699800CB9C6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B9381F1299D699800CB9C6E /* Assets.xcassets */; };
+		8BBCD49C299D721800615EE1 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBCD49A299D721800615EE1 /* SwiftUIView.swift */; };
+		8BBCD49D299D732600615EE1 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBCD49A299D721800615EE1 /* SwiftUIView.swift */; };
+		8BBCD49F299D733400615EE1 /* SwiftUIView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBCD49E299D733400615EE1 /* SwiftUIView2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B397DF4299D70B10031FCC3 /* costcalculator (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "costcalculator (iOS).entitlements"; sourceTree = "<group>"; };
+		8B397DF5299D70BF0031FCC3 /* costcalculator--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "costcalculator--iOS--Info.plist"; sourceTree = "<group>"; };
 		8B9381EF299D699700CB9C6E /* costcalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = costcalculatorApp.swift; sourceTree = "<group>"; };
 		8B9381F0299D699700CB9C6E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8B9381F1299D699800CB9C6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B9381F6299D699800CB9C6E /* costcalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = costcalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B9381FC299D699800CB9C6E /* costcalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = costcalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B9381FE299D699800CB9C6E /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		8BBCD49A299D721800615EE1 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		8BBCD49E299D733400615EE1 /* SwiftUIView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +52,8 @@
 		8B9381E9299D699700CB9C6E = {
 			isa = PBXGroup;
 			children = (
+				8B397DF5299D70BF0031FCC3 /* costcalculator--iOS--Info.plist */,
+				8B397DF4299D70B10031FCC3 /* costcalculator (iOS).entitlements */,
 				8B9381EE299D699700CB9C6E /* Shared */,
 				8B9381FD299D699800CB9C6E /* macOS */,
 				8B9381F7299D699800CB9C6E /* Products */,
@@ -56,7 +65,9 @@
 			children = (
 				8B9381EF299D699700CB9C6E /* costcalculatorApp.swift */,
 				8B9381F0299D699700CB9C6E /* ContentView.swift */,
+				8BBCD49A299D721800615EE1 /* SwiftUIView.swift */,
 				8B9381F1299D699800CB9C6E /* Assets.xcassets */,
+				8BBCD49E299D733400615EE1 /* SwiftUIView2.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -178,6 +189,7 @@
 			files = (
 				8B938201299D699800CB9C6E /* ContentView.swift in Sources */,
 				8B9381FF299D699800CB9C6E /* costcalculatorApp.swift in Sources */,
+				8BBCD49D299D732600615EE1 /* SwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,7 +198,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B938202299D699800CB9C6E /* ContentView.swift in Sources */,
+				8BBCD49F299D733400615EE1 /* SwiftUIView2.swift in Sources */,
 				8B938200299D699800CB9C6E /* costcalculatorApp.swift in Sources */,
+				8BBCD49C299D721800615EE1 /* SwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,11 +321,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "costcalculator (iOS).entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XQ85664453;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "costcalculator--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -324,7 +341,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.troopermusic.costcalculator;
 				PRODUCT_NAME = costcalculator;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -336,11 +355,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "costcalculator (iOS).entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XQ85664453;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "costcalculator--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -353,7 +375,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.troopermusic.costcalculator;
 				PRODUCT_NAME = costcalculator;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
