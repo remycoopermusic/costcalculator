@@ -64,5 +64,6 @@ struct CostCalculatorView: View {
 struct CostCalculatorView_Previews: PreviewProvider {
     static var previews: some View {
         CostCalculatorView()
+            .frame(width: 400.0, height: 400.0)
     }
 }
