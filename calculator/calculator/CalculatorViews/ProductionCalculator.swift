@@ -12,14 +12,17 @@ struct ProductionCalculator: View {
     @State private var hourlyRate: String = ""
     @State private var percentDiscount: String = ""
     @State private var hours: Double = 1
-    @State private var masterPercentageShare: Double = 1
+    @State private var masterPercentageShare: Double = 0
     
-    var masterDiscount: Double { 1 }
     var totalPrice: Double {
-        (Double(hourlyRate) ?? 0) * hours - totalDiscount
+        let hourlyRate = Double(self.hourlyRate) ?? 0
+        return (hourlyRate * hours) - (16.24 * (masterPercentageShare * 0.1))
     }
+    
     var totalDiscount: Double {
-        masterDiscount * (masterDiscount - masterPercentageShare)
+        let hourlyRate = Double(self.hourlyRate) ?? 0
+        let totalDiscount = (hourlyRate * hours) - totalPrice
+        return totalDiscount
     }
     
     var body: some View {
@@ -30,18 +33,21 @@ struct ProductionCalculator: View {
                 // add more views as needed
                 Form {
                     Section {
-                        TextField("Hourly Rate", text: $hourlyRate)
-                                                    
+                        HStack {
+                            Spacer()
+                            TextField("Hourly Rate", text: $hourlyRate)
+                        }
+                        
                         HStack {
                             Text("Hours")
-                            Slider(value: $hours, in: 1...100, step: 1)
+                            Slider(value: $hours, in: 1...50, step: 1)
                             Text("\(hours, specifier: "%.0f")")
                                 .frame(width: 40) // Fixed width label
                         }
 
                         HStack {
                             Text("Master Percentage Share")
-                            Slider(value: $masterPercentageShare, in: 0...100, step: 5)
+                            Slider(value: $masterPercentageShare, in: 0...50, step: 5)
                             Text("\(masterPercentageShare, specifier: "%.0f")")
                                 .frame(width: 40) // Fixed width label
                         }
@@ -84,6 +90,7 @@ struct ProductionCalculator: View {
         }
     }
 }
+
 
 
 
