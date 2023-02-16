@@ -60,9 +60,9 @@ struct DomainsCalculatorView: View {
         VStack {
             Text("Domains Calculator")
                 .font(.largeTitle)
-            Spacer()
             Text("This is where the Domains Calculator would be displayed.")
                 .font(.title2)
+            CarreerPhaseView()
         }
         .padding()
     }
