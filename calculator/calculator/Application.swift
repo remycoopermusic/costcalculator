@@ -25,7 +25,7 @@ struct Application: View {
                         Label("Hourly Rate", systemImage: "house")
                     }
                     NavigationLink(destination: WebsitesCalculatorView()) {
-                        Label("Websites", systemImage: "globe")
+                        Label("Production Calc", systemImage: "globe")
                     }
                     NavigationLink(destination: DomainsCalculatorView()) {
                         Label("Domains", systemImage: "link")

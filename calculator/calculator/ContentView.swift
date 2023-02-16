@@ -46,9 +46,10 @@ struct WebsitesCalculatorView: View {
         VStack {
             Text("Websites Calculator")
                 .font(.largeTitle)
-            Spacer()
             Text("This is where the Websites Calculator would be displayed.")
                 .font(.title2)
+            ProductionCalculator()
+            Spacer()
         }
         .padding()
     }
