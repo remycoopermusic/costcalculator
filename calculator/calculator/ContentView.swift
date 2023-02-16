@@ -16,6 +16,7 @@ struct ContentView: View {
         .init(title: "Home", imageName: "house"),
         .init(title: "About", imageName: "info.circle"),
         .init(title: "Settings", imageName: "gear"),
+        .init(title: "Profile", imageName: "person"),
     ]
     
     var body: some View {
@@ -25,6 +26,14 @@ struct ContentView: View {
             MainView()
         }
         .frame(minWidth: 600, minHeight: 400)
+    }
+}
+
+struct MainView: View {
+    var body: some View {
+        VStack {
+            
+        }
     }
 }
 
@@ -38,21 +47,17 @@ struct ListView: View {
                     Image(systemName: option.imageName)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 30)
+                        .frame(width: 18)
                     
                     Text(option.title)
                     
                     Spacer()
                 }
-                .padding()
+                .padding(5)
             }
+            
+            Spacer()
         }
-    }
-}
-
-struct MainView: View {
-    var body: some View {
-        Text("List")
     }
 }
 

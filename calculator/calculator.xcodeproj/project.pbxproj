@@ -56,6 +56,7 @@
 		8BBCD4AB299D737300615EE1 /* calculator */ = {
 			isa = PBXGroup;
 			children = (
+				8BD36802299DA892006FD6FE /* CalculatorViews */,
 				8BBCD4AC299D737300615EE1 /* calculatorApp.swift */,
 				8BBCD4AE299D737300615EE1 /* ContentView.swift */,
 				8BBCD4B0299D737300615EE1 /* Assets.xcassets */,
@@ -73,6 +74,13 @@
 				8BBCD4B3299D737300615EE1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8BD36802299DA892006FD6FE /* CalculatorViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CalculatorViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
