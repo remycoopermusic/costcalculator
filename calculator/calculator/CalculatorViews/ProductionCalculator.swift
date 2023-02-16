@@ -9,19 +9,24 @@ import SwiftUI
 
 struct ProductionCalculator: View {
     
+    let vatRates = [0, 9, 21]
+    
     @State private var hourlyRate: String = ""
     @State private var percentDiscount: String = ""
     @State private var hours: Double = 1
     @State private var masterPercentageShare: Double = 0
+    @State private var selectedVatRateIndex = 0
     
     var totalPrice: Double {
         let hourlyRate = Double(self.hourlyRate) ?? 0
-        return (hourlyRate * hours) - (16.24 * (masterPercentageShare * 0.1))
+        let vatRate = Double(vatRates[selectedVatRateIndex]) / 100.0 + 1.0
+        return ((hourlyRate * hours) - (16.24 * (masterPercentageShare * 0.1))) * vatRate
     }
     
     var totalDiscount: Double {
         let hourlyRate = Double(self.hourlyRate) ?? 0
-        let totalDiscount = (hourlyRate * hours) - totalPrice
+        let vatRate = Double(vatRates[selectedVatRateIndex]) / 100.0 + 1.0
+        let totalDiscount = (hourlyRate * hours) - totalPrice / vatRate
         return totalDiscount
     }
     
@@ -51,6 +56,15 @@ struct ProductionCalculator: View {
                             Text("\(masterPercentageShare, specifier: "%.0f")")
                                 .frame(width: 40) // Fixed width label
                         }
+                        
+                        HStack {
+                            Picker("VAT", selection: $selectedVatRateIndex) {
+                                ForEach(0..<vatRates.count) { index in
+                                    Text("\(vatRates[index])%")
+                                }
+                            }
+                            .pickerStyle(SegmentedPickerStyle())
+                        }
                     }
                 }
                 .padding()
@@ -66,9 +80,9 @@ struct ProductionCalculator: View {
 
                 VStack {
                     HStack {
-                        Text("Total Price:")
+                        Text("Price Excluding VAT:")
                         Spacer()
-                        Text("$\(String(format: "%.2f", totalPrice))")
+                        Text("$\(String(format: "%.2f", totalPrice / (Double(vatRates[selectedVatRateIndex]) / 100.0 + 1.0)))")
                     }
                     .padding()
 

@@ -44,9 +44,9 @@ struct HourlyRateCalculatorView: View {
 struct WebsitesCalculatorView: View {
     var body: some View {
         VStack {
-            Text("Websites Calculator")
+            Text("Production Cost Calculator")
                 .font(.largeTitle)
-            Text("This is where the Websites Calculator would be displayed.")
+            Text("Calculate your production project price.")
                 .font(.title2)
             ProductionCalculator()
             Spacer()
