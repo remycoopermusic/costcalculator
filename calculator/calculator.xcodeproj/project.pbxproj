@@ -15,6 +15,7 @@
 		8BD36808299DAD2D006FD6FE /* RateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD36807299DAD2D006FD6FE /* RateCalculator.swift */; };
 		8BD3680A299E42E5006FD6FE /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD36809299E42E5006FD6FE /* Application.swift */; };
 		8BD3680C299E4366006FD6FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD3680B299E4366006FD6FE /* ContentView.swift */; };
+		8BD36812299E9CC2006FD6FE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD36811299E9CC2006FD6FE /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		8BD36807299DAD2D006FD6FE /* RateCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCalculator.swift; sourceTree = "<group>"; };
 		8BD36809299E42E5006FD6FE /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		8BD3680B299E4366006FD6FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8BD36811299E9CC2006FD6FE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				8BBCD4B2299D737300615EE1 /* Preview Content */,
 				8BD36809299E42E5006FD6FE /* Application.swift */,
 				8BD3680B299E4366006FD6FE /* ContentView.swift */,
+				8BD36811299E9CC2006FD6FE /* SettingsView.swift */,
 			);
 			path = calculator;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 				8BD36804299DACE9006FD6FE /* ProductionCalculator.swift in Sources */,
 				8BBCD4AD299D737300615EE1 /* calculatorApp.swift in Sources */,
 				8BD3680C299E4366006FD6FE /* ContentView.swift in Sources */,
+				8BD36812299E9CC2006FD6FE /* SettingsView.swift in Sources */,
 				8BD36808299DAD2D006FD6FE /* RateCalculator.swift in Sources */,
 				8BD36806299DAD05006FD6FE /* LicenseCalculator.swift in Sources */,
 			);

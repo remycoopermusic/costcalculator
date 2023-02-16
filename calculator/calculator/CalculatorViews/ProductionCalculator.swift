@@ -91,12 +91,15 @@ struct ProductionCalculator: View {
 
             // Second column
             VStack {
-                Text("Summary goes here")
+                Text("Results")
+                    .font(.title)
                     .padding()
+                    
+                    
 
                 VStack {
                     HStack {
-                        Text("Price Excluding VAT:")
+                        Text("Price Excl. VAT:")
                         Spacer()
                         Text("$\(String(format: "%.2f", priceExcludingVAT))")
                     }
@@ -117,7 +120,7 @@ struct ProductionCalculator: View {
                     .padding()
 
                     HStack {
-                        Text("Price Including VAT:")
+                        Text("Price Incl. VAT:")
                         Spacer()
                         Text("$\(String(format: "%.2f", priceIncludingVAT))")
                     }
@@ -132,19 +135,16 @@ struct ProductionCalculator: View {
                     .fill(Color.gray.opacity(0.2))
             )
         }
+        .padding()
     }
 }
-
-
-
-
-
 
 
 
 struct ProductionCalculator_Previews: PreviewProvider {
     static var previews: some View {
         ProductionCalculator()
+            .frame(width: 600.0, height: 600.0)
     }
 }
 

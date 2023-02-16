@@ -47,7 +47,7 @@ struct Application: View {
                     NavigationLink(destination: ContentView()) {
                         Label("Notifications", systemImage: "bell")
                     }
-                    NavigationLink(destination: ContentView()) {
+                    NavigationLink(destination: SettingsView()) {
                         Label("Settings", systemImage: "gear")
                     }
                 }
@@ -79,6 +79,7 @@ struct Application: View {
 func toggleSidebar() {
         NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
 }
+
 
 struct SidebarView_Previews: PreviewProvider {
     static var previews: some View {
