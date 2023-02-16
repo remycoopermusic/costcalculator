@@ -80,9 +80,3 @@ struct ListView: View {
         .frame(maxWidth: 200)
     }
 }
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainPage()
-    }
-}
