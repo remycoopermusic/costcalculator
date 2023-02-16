@@ -61,7 +61,7 @@ struct Application: View {
             }
             .listStyle(SidebarListStyle())
             .navigationTitle("Explore")
-            .frame(minWidth: 150, idealWidth: 250, maxWidth: 300)
+            .frame(minWidth: 100, idealWidth: 175, maxWidth: 185)
             .toolbar {
                 ToolbarItem(placement: .navigation) {
                     Button(action: toggleSidebar, label: {
