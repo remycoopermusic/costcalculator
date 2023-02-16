@@ -8,22 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		8BBCD4AD299D737300615EE1 /* calculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBCD4AC299D737300615EE1 /* calculatorApp.swift */; };
-		8BBCD4AF299D737300615EE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBCD4AE299D737300615EE1 /* ContentView.swift */; };
+		8BBCD4AF299D737300615EE1 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBCD4AE299D737300615EE1 /* MainPage.swift */; };
 		8BBCD4B1299D737300615EE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BBCD4B0299D737300615EE1 /* Assets.xcassets */; };
 		8BBCD4B4299D737300615EE1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BBCD4B3299D737300615EE1 /* Preview Assets.xcassets */; };
 		8BD367FF299D9D8D006FD6FE /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD367FE299D9D8D006FD6FE /* SwiftUIView.swift */; };
 		8BD36801299DA31B006FD6FE /* CostCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD36800299DA31B006FD6FE /* CostCalculatorView.swift */; };
+		8BD36804299DACE9006FD6FE /* ProductionCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD36803299DACE9006FD6FE /* ProductionCalculator.swift */; };
+		8BD36806299DAD05006FD6FE /* LicenseCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD36805299DAD05006FD6FE /* LicenseCalculator.swift */; };
+		8BD36808299DAD2D006FD6FE /* RateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD36807299DAD2D006FD6FE /* RateCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8BBCD4A9299D737300615EE1 /* calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BBCD4AC299D737300615EE1 /* calculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculatorApp.swift; sourceTree = "<group>"; };
-		8BBCD4AE299D737300615EE1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8BBCD4AE299D737300615EE1 /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
 		8BBCD4B0299D737300615EE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BBCD4B3299D737300615EE1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8BBCD4B5299D737300615EE1 /* calculator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = calculator.entitlements; sourceTree = "<group>"; };
 		8BD367FE299D9D8D006FD6FE /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		8BD36800299DA31B006FD6FE /* CostCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostCalculatorView.swift; sourceTree = "<group>"; };
+		8BD36803299DACE9006FD6FE /* ProductionCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionCalculator.swift; sourceTree = "<group>"; };
+		8BD36805299DAD05006FD6FE /* LicenseCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseCalculator.swift; sourceTree = "<group>"; };
+		8BD36807299DAD2D006FD6FE /* RateCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +64,7 @@
 			children = (
 				8BD36802299DA892006FD6FE /* CalculatorViews */,
 				8BBCD4AC299D737300615EE1 /* calculatorApp.swift */,
-				8BBCD4AE299D737300615EE1 /* ContentView.swift */,
+				8BBCD4AE299D737300615EE1 /* MainPage.swift */,
 				8BBCD4B0299D737300615EE1 /* Assets.xcassets */,
 				8BBCD4B5299D737300615EE1 /* calculator.entitlements */,
 				8BBCD4B2299D737300615EE1 /* Preview Content */,
@@ -79,6 +85,9 @@
 		8BD36802299DA892006FD6FE /* CalculatorViews */ = {
 			isa = PBXGroup;
 			children = (
+				8BD36803299DACE9006FD6FE /* ProductionCalculator.swift */,
+				8BD36805299DAD05006FD6FE /* LicenseCalculator.swift */,
+				8BD36807299DAD2D006FD6FE /* RateCalculator.swift */,
 			);
 			path = CalculatorViews;
 			sourceTree = "<group>";
@@ -153,9 +162,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BBCD4AF299D737300615EE1 /* ContentView.swift in Sources */,
+				8BBCD4AF299D737300615EE1 /* MainPage.swift in Sources */,
+				8BD36804299DACE9006FD6FE /* ProductionCalculator.swift in Sources */,
 				8BD36801299DA31B006FD6FE /* CostCalculatorView.swift in Sources */,
 				8BBCD4AD299D737300615EE1 /* calculatorApp.swift in Sources */,
+				8BD36808299DAD2D006FD6FE /* RateCalculator.swift in Sources */,
+				8BD36806299DAD05006FD6FE /* LicenseCalculator.swift in Sources */,
 				8BD367FF299D9D8D006FD6FE /* SwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
