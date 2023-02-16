@@ -9,25 +9,37 @@ import SwiftUI
 
 struct ProductionCalculator: View {
     
-    let vatRates = [0, 9, 21]
+    enum VAT: String, CaseIterable, Identifiable {
+        case zero = "0%"
+        case nine = "9%"
+        case twentyOne = "21%"
+        
+        var id: String { self.rawValue }
+    }
     
-    @State private var hourlyRate: String = ""
+    @State private var hourlyRate: String = "58"
     @State private var percentDiscount: String = ""
     @State private var hours: Double = 1
     @State private var masterPercentageShare: Double = 0
-    @State private var selectedVatRateIndex = 0
+    @State private var selectedVAT: VAT = .zero
     
-    var totalPrice: Double {
+    var priceExcludingVAT: Double {
         let hourlyRate = Double(self.hourlyRate) ?? 0
-        let vatRate = Double(vatRates[selectedVatRateIndex]) / 100.0 + 1.0
-        return ((hourlyRate * hours) - (16.24 * (masterPercentageShare * 0.1))) * vatRate
+        return ((hourlyRate * hours) - (16.24 * (masterPercentageShare*0.01)))
     }
     
     var totalDiscount: Double {
         let hourlyRate = Double(self.hourlyRate) ?? 0
-        let vatRate = Double(vatRates[selectedVatRateIndex]) / 100.0 + 1.0
-        let totalDiscount = (hourlyRate * hours) - totalPrice / vatRate
-        return totalDiscount
+        return ((hourlyRate * hours) - priceExcludingVAT) * hours
+    }
+    
+    var vatPrice: Double {
+        return priceExcludingVAT * (Double(selectedVAT.rawValue.dropLast())! / 100)
+    }
+    
+    var priceIncludingVAT: Double {
+        let vatMultiplier = 1 + Double(selectedVAT.rawValue.dropLast())! / 100
+        return priceExcludingVAT * vatMultiplier
     }
     
     var body: some View {
@@ -58,12 +70,16 @@ struct ProductionCalculator: View {
                         }
                         
                         HStack {
-                            Picker("VAT", selection: $selectedVatRateIndex) {
-                                ForEach(0..<vatRates.count) { index in
-                                    Text("\(vatRates[index])%")
+                            Text("VAT")
+                            Menu {
+                                ForEach(VAT.allCases) { option in
+                                    Button(option.rawValue) {
+                                        self.selectedVAT = option
+                                    }
                                 }
+                            } label: {
+                                Text(selectedVAT.rawValue)
                             }
-                            .pickerStyle(SegmentedPickerStyle())
                         }
                     }
                 }
@@ -82,14 +98,28 @@ struct ProductionCalculator: View {
                     HStack {
                         Text("Price Excluding VAT:")
                         Spacer()
-                        Text("$\(String(format: "%.2f", totalPrice / (Double(vatRates[selectedVatRateIndex]) / 100.0 + 1.0)))")
+                        Text("$\(String(format: "%.2f", priceExcludingVAT))")
                     }
                     .padding()
 
                     HStack {
+                        Text("VAT Price:")
+                        Spacer()
+                        Text("$\(String(format: "%.2f", vatPrice))")
+                    }
+                    .padding()
+                    
+                    HStack {
                         Text("Total Discount:")
                         Spacer()
                         Text("$\(String(format: "%.2f", totalDiscount))")
+                    }
+                    .padding()
+
+                    HStack {
+                        Text("Price Including VAT:")
+                        Spacer()
+                        Text("$\(String(format: "%.2f", priceIncludingVAT))")
                     }
                     .padding()
                 }
@@ -104,6 +134,9 @@ struct ProductionCalculator: View {
         }
     }
 }
+
+
+
 
 
 
