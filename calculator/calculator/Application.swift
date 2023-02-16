@@ -11,7 +11,7 @@ struct Application: View {
     var body: some View {
         NavigationView {
             List {
-                NavigationLink(destination: ContentView()) {
+                NavigationLink(destination: About()) {
                     Label("Welcome", systemImage: "star")
                 }
                 

@@ -14,16 +14,30 @@ struct ContentView: View {
     }
 }
 
+struct About: View {
+    var body: some View {
+        VStack {
+            Text("About")
+                .font(.largeTitle)
+            Text("This is where the Hourly Rate Calculator would be displayed.")
+                .font(.title2)
+            Spacer()
+        }
+        .padding()
+    }
+}
+
 struct HourlyRateCalculatorView: View {
     var body: some View {
         VStack {
             Text("Hourly Rate Calculator")
                 .font(.largeTitle)
-            Spacer()
             Text("This is where the Hourly Rate Calculator would be displayed.")
                 .font(.title2)
+            RateCalculator()
         }
         .padding()
+        Spacer()
     }
 }
 
