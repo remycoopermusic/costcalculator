@@ -8,39 +8,37 @@
 import SwiftUI
 
 struct ProductionCalculator: View {
-    
-    @State private var hourlyRate: String = ""
-    @State private var percentDiscount: String = ""
-    @State private var hours: Double = 1
-    @State private var masterPercentageShare: Double = 0
+    @State private var hourlyRate = ""
+    @State private var percentDiscount = ""
+    @State private var hours = 1.0
+    @State private var masterPercentageShare = 0.0
     
     var body: some View {
         HStack(spacing: 0) {
             // First column
             VStack {
-                // Text("Form goes here")
                 // add more views as needed
                 Form {
                     Section {
+                        TextField("Hourly Rate", text: $hourlyRate)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                        
                         HStack {
                             Text("Hours")
                             Slider(value: $hours, in: 1...100, step: 1)
-                            Text("\(hours, specifier: "%.0f")")
+                            Text("\(Int(hours))")
                                 .frame(width: 40) // Fixed width label
                         }
 
                         HStack {
                             Text("Master Percentage Share")
                             Slider(value: $masterPercentageShare, in: 0...100, step: 5)
-                            Text("\(masterPercentageShare, specifier: "%.0f")")
+                            Text("\(Int(masterPercentageShare))")
                                 .frame(width: 40) // Fixed width label
                         }
                     }
                 }
-
-
                 .padding()
-                
             }
             .frame(maxWidth: .infinity)
             .padding()
